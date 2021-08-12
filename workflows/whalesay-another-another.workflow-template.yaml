@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
   name: whalesay-another
-  namespace: local-cf
+  namespace: local-cf-2
 spec:
   entrypoint: whalesay
   templates:

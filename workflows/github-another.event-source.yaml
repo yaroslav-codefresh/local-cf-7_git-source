@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
   name: github-another
-  namespace: local-cf
+  namespace: local-cf-2
 spec:
   eventBusName: codefresh-eventbus
   service:
