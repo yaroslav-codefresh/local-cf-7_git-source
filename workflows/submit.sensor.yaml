@@ -14,7 +14,7 @@ spec:
       eventName: push
   triggers:
     - template:
-        conditions: "git-push && git-push-2"
+        conditions: "git-push || git-push-2"
         name: argo-workflow-trigger
         argoWorkflow:
           group: argoproj.io
