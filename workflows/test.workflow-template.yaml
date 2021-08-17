@@ -4,17 +4,21 @@ metadata:
   name: test
   namespace: local-cf-7
 spec:
-  entrypoint: echo
+  entrypoint: whalesay
   templates:
+    - name: main
+      steps:
+        - - name: whalesay
+            template: whalesay
+        - - name: exec-whalesay
+            templateRef:
+              name: whalesay
+              template: main
 
-  - name: echo
-    inputs:
-      parameters:
-        - name: message
-    container:
-      image: alpine
-      command:
-        - echo
-        - "{{inputs.parameters.message}}"
-
-
+    - name: whalesay
+      container:
+        image: docker/whalesay
+        command:
+          - cowsay
+        args:
+          - Hello World
